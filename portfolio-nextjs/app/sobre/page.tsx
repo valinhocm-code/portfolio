@@ -138,7 +138,7 @@ export default function SobrePage() {
   return (
     <div className={instrumentSans.className + " bg-[#fafafa] text-[#020202]"}>
       <div className="px-[38px] md:px-[40px] pt-[0px] pb-[96px]">
-        <div className="h-[570px] md:h-[570px]" />
+        <div className="h-[450px] md:h-[450px]" />
         <div className="border-t border-black" />
 
         <section className="grid grid-cols-1 md:grid-cols-[42%_29.2%_28.8%] gap-y-12 pt-[46px] pb-[54px]">
