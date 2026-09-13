@@ -20,15 +20,8 @@ const CASE_STUDY_PROJECTION = /* groq */ `{
   order
 }`;
 
-function hasSanityConfig() {
-  return Boolean(
-    process.env.NEXT_PUBLIC_SANITY_PROJECT_ID &&
-      process.env.NEXT_PUBLIC_SANITY_DATASET
-  );
-}
-
 export async function getAllCaseStudies(): Promise<CaseStudy[]> {
-  if (!client || !hasSanityConfig()) return [];
+  if (!client) return [];
   const query = /* groq */ `
     *[_type == "caseStudy"] | order(order asc, _createdAt desc) ${CASE_STUDY_PROJECTION}
   `;
@@ -36,7 +29,7 @@ export async function getAllCaseStudies(): Promise<CaseStudy[]> {
 }
 
 export async function getFeaturedCaseStudies(): Promise<CaseStudy[]> {
-  if (!client || !hasSanityConfig()) return [];
+  if (!client) return [];
   const query = /* groq */ `
     *[_type == "caseStudy" && featured == true] | order(order asc, _createdAt desc) ${CASE_STUDY_PROJECTION}
   `;
@@ -44,7 +37,7 @@ export async function getFeaturedCaseStudies(): Promise<CaseStudy[]> {
 }
 
 export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
-  if (!client || !hasSanityConfig()) return null;
+  if (!client) return null;
   const query = /* groq */ `
     *[_type == "caseStudy" && slug.current == $slug][0] ${CASE_STUDY_PROJECTION}
   `;
@@ -52,7 +45,7 @@ export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null
 }
 
 export async function getAllCaseStudySlugs(): Promise<string[]> {
-  if (!client || !hasSanityConfig()) return [];
+  if (!client) return [];
   const query = /* groq */ `*[_type == "caseStudy"].slug.current`;
   return client.fetch(query, {}, { next: { revalidate: 60, tags: ["caseStudy"] } });
 }
