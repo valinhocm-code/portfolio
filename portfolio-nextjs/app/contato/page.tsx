@@ -11,7 +11,7 @@ export default function ContatoPage() {
         <h1 className="font-serif text-5xl md:text-7xl leading-[0.95] tracking-tight">
           Vamos conversar
         </h1>
-        <div className="mt-12 space-y-4 text-base md:text-lg">
+        <div className="mt-12 flex flex-col items-start gap-4 text-base md:text-lg">
           <a href="mailto:valinhocm@gmail.com" className="link-underline inline-block">
             valinhocm@gmail.com
           </a>
