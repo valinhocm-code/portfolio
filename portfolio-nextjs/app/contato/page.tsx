@@ -12,11 +12,16 @@ export default function ContatoPage() {
           Vamos conversar
         </h1>
         <div className="mt-12 space-y-4 text-base md:text-lg">
+          <a href="mailto:valinhocm@gmail.com" className="link-underline">
+            valinhocm@gmail.com
+          </a>
           <a
-            href="mailto:hello@miguelvalinho.com"
-            className="link-underline"
+            href="https://wa.me/5553992425445"
+            target="_blank"
+            rel="noreferrer"
+            className="block link-underline"
           >
-            hello@miguelvalinho.com
+            +55 (53) 99242-5445
           </a>
         </div>
       </div>
