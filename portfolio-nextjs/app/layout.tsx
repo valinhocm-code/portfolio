@@ -10,8 +10,8 @@ const ebGaramond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Miguel Valinho — Portfolio",
-  description: "Design portfolio",
+  title: "Miguel Valinho",
+  description: "Designer baseado em Pelotas, RS",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
